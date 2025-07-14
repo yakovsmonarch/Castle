@@ -154,6 +154,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43af7744eea75afd7805f197bad4dff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PigMaterial: {fileID: 2100000, guid: cda78f0f6e3073305a216ddb1952c163, type: 2}
+  Timer: 0
 --- !u!65 &575374661
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -511,7 +513,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
