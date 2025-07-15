@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    private float _speedRotation;
     private Transform _playerTransform;
     private CoinNumber _coinNumber;
 
@@ -12,6 +13,7 @@ public class Coin : MonoBehaviour
     {
         _playerTransform = FindObjectOfType<Person>().transform;
         _coinNumber = FindObjectOfType<CoinNumber>();
+        _speedRotation = 100;
     }
 
     // Update is called once per frame
@@ -23,5 +25,7 @@ public class Coin : MonoBehaviour
             _coinNumber.Number += 1;
             Destroy(gameObject);
         }
+
+        transform.Rotate(0, 0, _speedRotation * Time.deltaTime);
     }
 }
