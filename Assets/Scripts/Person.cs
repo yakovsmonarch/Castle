@@ -6,6 +6,8 @@ public class Person : MonoBehaviour
 {
     public float Speed;
     public float SpeedRotation;
+
+    private float _boost = 3;
     
     void Start()
     {
@@ -18,9 +20,16 @@ public class Person : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         var offset = new Vector3(h, 0, v);
 
-        transform.Translate(offset * Speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            transform.Translate(offset * Speed * _boost * Time.deltaTime);
+        }
+        else
+        {
+            transform.Translate(offset * Speed * Time.deltaTime);
+        }
 
-        float r = Input.GetAxis("Mouse X");
-        transform.Rotate(0, r * SpeedRotation * Time.deltaTime, 0);
+        float offsetR = Input.GetAxis("Mouse X");
+        transform.Rotate(0, offsetR * SpeedRotation * Time.deltaTime, 0);
     }
 }
