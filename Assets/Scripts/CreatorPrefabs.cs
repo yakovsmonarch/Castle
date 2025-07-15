@@ -17,7 +17,8 @@ public class CreatorPrefabs : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Instantiate(Prefab, transform.position, transform.rotation);
+            GameObject gameObject = Instantiate(Prefab, transform.position, transform.rotation);
+            gameObject.transform.position = new Vector3(transform.position.x + Random.Range(0.001f, 0.002f), transform.position.y, transform.position.z + Random.Range(0.001f, 0.002f));
         }
     }
 }
